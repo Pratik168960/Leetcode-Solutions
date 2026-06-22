@@ -1,0 +1,23 @@
+// LeetCode Problem 1189_Maximum_Number_of_Balloons
+// Status: Accepted
+// Language: C++
+
+class Solution {
+public:
+    int maxNumberOfBalloons(string text) {
+       int b = 0, a = 0, l = 0, o = 0, n = 0;
+        
+        for (char c : text) {
+            if (c == 'b') b++;
+            else if (c == 'a') a++;
+            else if (c == 'l') l++;
+            else if (c == 'o') o++;
+            else if (c == 'n') n++;
+        }
+        
+        l = l / 2;
+        o = o / 2;
+        
+        return min({b, a, l, o, n}); 
+    }
+};
